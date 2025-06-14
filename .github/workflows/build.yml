@@ -49,6 +49,7 @@ jobs:
   build:
     uses: sebthom/gha-shared/.github/workflows/maven-build.yml@v1
     with:
+      timeout-minutes: 2
       extra-maven-args: ${{ inputs.extra-maven-args }}
       compile-jdk: 17
       maven-jdk: temurin/21

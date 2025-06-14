@@ -1,3 +1,18 @@
+# Local work folder that is not checked in
+_LOCAL/
+
+# Eclipse
+.apt_generated/
+.checkstyle
+.classpath
+.factorypath
+.project
+**/.settings/*
+!**/.settings/
+!**/.settings/org.eclipse.jdt.core.prefs
+bin/
+
+# Maven
 target/
 pom.xml.tag
 pom.xml.releaseBackup
@@ -7,11 +22,34 @@ release.properties
 dependency-reduced-pom.xml
 buildNumber.properties
 .mvn/timing.properties
-# https://github.com/takari/maven-wrapper#usage-without-binary-jar
-.mvn/wrapper/maven-wrapper.jar
 
-# Eclipse m2e generated files
-# Eclipse Core
-.project
-# JDT-specific (Eclipse Java Development Tools)
-.classpath
+# IntelliJ
+/.idea
+/*.iml
+/*.ipr
+/*.iws
+
+# NetBeans
+nb-configuration.xml
+
+# Eclipse Theia
+/.theia
+
+# Visual Studio Code
+/.vscode
+
+# OSX
+.DS_Store
+
+# Vim
+*.swo
+*.swp
+
+# patch
+*.orig
+*.rej
+
+# Temp files
+.history
+*.tmp
+*.bak

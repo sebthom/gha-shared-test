@@ -1,0 +1,69 @@
+# https://docs.github.com/en/actions/writing-workflows/workflow-syntax-for-github-actions
+name: Build
+
+on:
+  schedule:
+    - cron: '0 15 1 * *'
+  push:
+    branches-ignore:  # build all branches except:
+    - 'dependabot/**'  # prevent GHA triggered twice (once for commit to the branch and once for opening/syncing the PR)
+    tags-ignore:  # don't build tags
+    - '**'
+    paths-ignore:
+    - '**/*.adoc'
+    - '**/*.md'
+    - '.editorconfig'
+    - '.git*'
+    - '.github/*.yml'
+    - '.github/workflows/stale.yml'
+  pull_request:
+    paths-ignore:
+    - '**/*.adoc'
+    - '**/*.md'
+    - '.editorconfig'
+    - '.git*'
+    - '.github/*.yml'
+    - '.github/workflows/stale.yml'
+  workflow_dispatch:
+    # https://docs.github.com/en/actions/writing-workflows/choosing-when-your-workflow-runs/events-that-trigger-workflows#workflow_dispatch
+    inputs:
+      extra-maven-args:
+        description: 'Additional Maven Args'
+        required: false
+        default: ''
+      debug-with-ssh:
+        description: "Start an SSH session for debugging purposes at the end of the build:"
+        default: never
+        type: choice
+        options: [ always, on_failure, on_failure_or_cancelled, never ]
+      debug-with-ssh-only-for-actor:
+        description: "Limit access to the SSH session to the GitHub user that triggered the job."
+        default: true
+        type: boolean
+      debug-with-ssh-only-jobs-matching:
+        description: "Only start an SSH session for jobs matching this regex pattern:"
+        default: ".*"
+        type: string
+
+jobs:
+  build:
+    uses: sebthom/gha-shared/.github/workflows/maven-build.yml@v1
+    with:
+      extra-maven-args: ${{ inputs.extra-maven-args }}
+      compile-jdk: 17
+      maven-jdk: temurin/21
+      test-jdks: 21,24
+      experimental-test-jdks: 25
+      release-branch: main
+      debug-with-ssh: ${{ inputs.debug-with-ssh }}
+      debug-with-ssh-only-for-actor: ${{ inputs.debug-with-ssh-only-for-actor }}
+      debug-with-ssh-only-jobs-matching: ${{ inputs.debug-with-ssh-only-jobs-matching }}
+    secrets:
+      SONATYPE_CENTRAL_USER: ${{ vars.SONATYPE_CENTRAL_USER }}
+      SONATYPE_CENTRAL_TOKEN: ${{ secrets.SONATYPE_CENTRAL_TOKEN }}
+      GPG_SIGN_KEY: ${{ secrets.GPG_SIGN_KEY }}
+      GPG_SIGN_KEY_PWD: ${{ secrets.GPG_SIGN_KEY_PWD }}
+      CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+    permissions:
+      contents: write      # for release tagging
+      pull-requests: write # for dependabot auto merges

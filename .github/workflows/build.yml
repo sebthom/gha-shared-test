@@ -47,8 +47,7 @@ on:
 
 jobs:
   build:
-    #uses: sebthom/gha-shared/.github/workflows/maven-build.yml@v1
-    uses: sebthom/gha-shared/.github/workflows/hello.yml@v1
+    uses: sebthom/gha-shared/.github/workflows/maven-build.yml@v1
     with:
       timeout-minutes: 2
 

@@ -51,11 +51,14 @@ jobs:
     uses: sebthom/gha-shared/.github/workflows/hello.yml@v1
     with:
       timeout-minutes: 2
+
+      compile-jdk: 17
+      maven-jdk: temurin@21
+      test-jdks: 21,24
+      experimental-test-jdks: 25
+    
     #  extra-maven-args: ${{ inputs.extra-maven-args }}
-    #  compile-jdk: 17
-    #  maven-jdk: temurin@21
-    #  test-jdks: 21,24
-    #  experimental-test-jdks: 25
+
     #  release-branch: main
     #  debug-with-ssh: ${{ inputs.debug-with-ssh }}
     #  debug-with-ssh-only-for-actor: ${{ inputs.debug-with-ssh-only-for-actor }}

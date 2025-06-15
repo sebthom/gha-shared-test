@@ -60,12 +60,12 @@ jobs:
       debug-with-ssh: ${{ inputs.debug-with-ssh }}
       debug-with-ssh-only-for-actor: ${{ inputs.debug-with-ssh-only-for-actor }}
       debug-with-ssh-only-jobs-matching: ${{ inputs.debug-with-ssh-only-jobs-matching }}
-    secrets:
-      SONATYPE_CENTRAL_USER: ${{ vars.SONATYPE_CENTRAL_USER }}
-      SONATYPE_CENTRAL_TOKEN: ${{ secrets.SONATYPE_CENTRAL_TOKEN }}
-      GPG_SIGN_KEY: ${{ secrets.GPG_SIGN_KEY }}
-      GPG_SIGN_KEY_PWD: ${{ secrets.GPG_SIGN_KEY_PWD }}
-      CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+    #secrets:
+    #  SONATYPE_CENTRAL_USER: ${{ vars.SONATYPE_CENTRAL_USER }}
+    #  SONATYPE_CENTRAL_TOKEN: ${{ secrets.SONATYPE_CENTRAL_TOKEN }}
+    #  GPG_SIGN_KEY: ${{ secrets.GPG_SIGN_KEY }}
+    #  GPG_SIGN_KEY_PWD: ${{ secrets.GPG_SIGN_KEY_PWD }}
+    #  CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
     permissions:
       contents: write      # for release tagging
       pull-requests: write # for dependabot auto merges

@@ -72,5 +72,6 @@ jobs:
       CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
 
     permissions:
-      contents: write      # for release tagging
+      actions: write       # to delete action cache entries
+      contents: write      # to create releases (commit to dev branch, create tags)
       pull-requests: write # for dependabot auto merges

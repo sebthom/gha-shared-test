@@ -57,7 +57,6 @@ jobs:
       allow-failure-jdks: 24
 
       extra-maven-args: ${{ inputs.extra-maven-args }}
-      release-branch: main
       snapshots-branch: mvn-snapshots-repo
       javadoc-branch: javadoc
 

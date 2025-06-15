@@ -60,9 +60,9 @@ jobs:
       extra-maven-args: ${{ inputs.extra-maven-args }}
       release-branch: main
 
-    #  debug-with-ssh: ${{ inputs.debug-with-ssh }}
-    #  debug-with-ssh-only-for-actor: ${{ inputs.debug-with-ssh-only-for-actor }}
-    #  debug-with-ssh-only-jobs-matching: ${{ inputs.debug-with-ssh-only-jobs-matching }}
+      debug-with-ssh: ${{ inputs.debug-with-ssh }}
+      debug-with-ssh-only-for-actor: ${{ inputs.debug-with-ssh-only-for-actor }}
+      debug-with-ssh-only-jobs-matching: ${{ inputs.debug-with-ssh-only-jobs-matching }}
     #secrets:
     #  SONATYPE_CENTRAL_USER: ${{ vars.SONATYPE_CENTRAL_USER }}
     #  SONATYPE_CENTRAL_TOKEN: ${{ secrets.SONATYPE_CENTRAL_TOKEN }}

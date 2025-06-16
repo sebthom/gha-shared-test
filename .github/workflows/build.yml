@@ -55,6 +55,7 @@ jobs:
       compile-jdk: 17
       test-jdks: 21,24
       allow-failure-jdks: 24
+      maven-versions: 3.6.3,latest,mvnw
 
       extra-maven-args: ${{ inputs.extra-maven-args }}
       snapshots-branch: mvn-snapshots-repo

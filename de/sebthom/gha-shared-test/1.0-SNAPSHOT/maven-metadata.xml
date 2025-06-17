@@ -3,33 +3,33 @@
   <groupId>de.sebthom</groupId>
   <artifactId>gha-shared-test</artifactId>
   <versioning>
-    <lastUpdated>20250617141720</lastUpdated>
+    <lastUpdated>20250617145915</lastUpdated>
     <snapshot>
-      <timestamp>20250617.141720</timestamp>
-      <buildNumber>16</buildNumber>
+      <timestamp>20250617.145915</timestamp>
+      <buildNumber>17</buildNumber>
     </snapshot>
     <snapshotVersions>
       <snapshotVersion>
         <extension>pom</extension>
-        <value>1.0-20250617.141720-16</value>
-        <updated>20250617141720</updated>
+        <value>1.0-20250617.145915-17</value>
+        <updated>20250617145915</updated>
       </snapshotVersion>
       <snapshotVersion>
         <extension>jar</extension>
-        <value>1.0-20250617.141720-16</value>
-        <updated>20250617141720</updated>
+        <value>1.0-20250617.145915-17</value>
+        <updated>20250617145915</updated>
       </snapshotVersion>
       <snapshotVersion>
         <classifier>sources</classifier>
         <extension>jar</extension>
-        <value>1.0-20250617.141720-16</value>
-        <updated>20250617141720</updated>
+        <value>1.0-20250617.145915-17</value>
+        <updated>20250617145915</updated>
       </snapshotVersion>
       <snapshotVersion>
         <classifier>javadoc</classifier>
         <extension>jar</extension>
-        <value>1.0-20250617.141720-16</value>
-        <updated>20250617141720</updated>
+        <value>1.0-20250617.145915-17</value>
+        <updated>20250617145915</updated>
       </snapshotVersion>
     </snapshotVersions>
   </versioning>

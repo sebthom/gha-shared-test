@@ -51,6 +51,7 @@ jobs:
     with:
       timeout-minutes: 2
 
+      runners: ubuntu-latest,macos-latest
       maven-jdk: temurin@17
       compile-jdk: 17
       test-jdks: 21,24!

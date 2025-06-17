@@ -1,6 +1,6 @@
 package de.sebthom;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 import org.junit.jupiter.api.Test;
 
@@ -9,11 +9,9 @@ import org.junit.jupiter.api.Test;
  */
 class AppTest {
 
-   /**
-    * Rigorous Test :-)
-    */
    @Test
-   void shouldAnswerWithTrue() {
-      assertTrue(true);
+   void test() {
+      // Fail on JDK24 which is marked as allow failure in the build.yml
+      assertNotEquals(Runtime.version().feature(), 24);
    }
 }

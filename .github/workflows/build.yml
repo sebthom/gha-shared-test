@@ -37,7 +37,7 @@ on:
         type: choice
         options: [ always, on_failure, on_failure_or_cancelled, never ]
       debug-with-ssh-only-for-actor:
-        description: "Limit access to the SSH session to the GitHub user that triggered the job."
+        description: "Restrict SSH debug session access to the GitHub user who triggered the workflow"
         default: true
         type: boolean
       debug-with-ssh-only-jobs-matching:

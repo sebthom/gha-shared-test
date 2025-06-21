@@ -70,7 +70,7 @@ jobs:
         fi
 
       debug-with-ssh: ${{ inputs.debug-with-ssh }}
-      debug-with-ssh-only-for-actor: ${{ inputs.debug-with-ssh-only-for-actor }}
+      debug-with-ssh-only-for-actor: ${{ ((inputs.debug-with-ssh-only-for-actor == false) || (inputs.debug-with-ssh-only-for-actor == 'false')) && false || true }}
       debug-with-ssh-only-jobs-matching: ${{ inputs.debug-with-ssh-only-jobs-matching }}
 
     secrets:

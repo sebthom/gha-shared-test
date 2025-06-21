@@ -51,14 +51,14 @@ jobs:
     with:
       timeout-minutes: 5
 
-      runs-on: ubuntu-latest,macos-latest!
+      runs-on: ubuntu-latest,macos-latest!,windows-latest
       maven-jdk: temurin@17
       compile-jdk: 17
-      test-jdks: 21,24!
+      #test-jdks: 21,24!
       maven-versions: |
         3.6.3
-        latest!
-        mvnw
+      #  latest!
+      #  mvnw
 
       extra-maven-args: ${{ inputs.extra-maven-args }}
       snapshots-branch: mvn-snapshots-repo

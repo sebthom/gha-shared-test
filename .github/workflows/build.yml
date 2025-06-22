@@ -52,7 +52,7 @@ jobs:
       timeout-minutes: 5
 
       #runs-on: ubuntu-latest,macos-latest!,windows-latest
-      runs-on: windows-latest
+      runs-on: ubuntu-latest,windows-latest
       maven-jdk: temurin@17
       compile-jdk: 24 #17
       #test-jdks: 21,24!

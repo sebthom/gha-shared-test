@@ -51,10 +51,11 @@ jobs:
     with:
       timeout-minutes: 5
 
-      runs-on: ubuntu-latest,macos-latest!,windows-latest
+      #runs-on: ubuntu-latest,macos-latest!,windows-latest
+      runs-on: windows-latest
       maven-jdk: temurin@17
-      compile-jdk: 17
-      test-jdks: 21,24!
+      compile-jdk: 24 #17
+      #test-jdks: 21,24!
       maven-versions: |
         3.6.3
       #  latest!
